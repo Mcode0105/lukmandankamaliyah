@@ -322,8 +322,24 @@
 
 	<script>
 		$(document).ready(function () {
+			Swal.fire({
+			title: 'Buka Undangan Pernikahan',
+			icon : 'success',
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Buka Undangan',
+			showClass: {
+				popup: 'animate__animated animate__fadeInDown'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutUp'
+			}
+			}).then((result) => {
+			if (result.isConfirmed) {
 				var audio = new Audio('audio.mp3');
 					audio.play();
+			}
+			})
 			
 		});
     var d = new Date(new Date().getTime() + 25 * 120 * 120 * 2000);
