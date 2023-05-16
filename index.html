@@ -167,6 +167,7 @@
 										<span>Hari Jum'at</span>
 										<span>19 Mei 2023</span>
 									</div>
+									<span>Hiburan : Orkes pesona dan tari ular</span>
 									
 									<p>Jl. Utara PP Bulugading RT/RW : 001/009, Ds. Tisnogambar, Kec. Bangsalsari Kab. Jember</p>
 								</div>
@@ -183,8 +184,9 @@
 										<i class="icon-calendar"></i>
 										<span>Hari Jum'at</span>
 										<span>19 Mei 2023</span>
+										
 									</div>
-									
+									<span>Hiburan : Orkes pesona dan tari ular</span>
 									<p>Jl. Utara PP Bulugading RT/RW : 001/009, Ds. Tisnogambar, Kec. Bangsalsari Kab. Jember</p>
 								</div>
 							</div>
@@ -318,6 +320,31 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<script>
+		const tanggal_tujuan = new Date("May 19, 2023 16:00:00").getTime();
+		const sekarang = new Date().getTime();
+		const selisih = tanggal_tujuan - sekarang;
+		const hari = Math.floor(selisih / (1000 * 60 * 60 * 24));
+		const jam = Math.floor(selisih % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+		const menit = Math.floor(selisih % (1000 * 60 * 60 ) / (1000 * 60));
+		const detik = Math.floor(selisih % (1000 * 60  ) / (1000));
+
+		var d = new Date(new Date().getTime() + 40 * 120 * 180 * 400);
+
+		// default example
+		simplyCountdown('.simply-countdown-one', {
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate()
+		});
+
+		//jQuery example
+		$('#simply-countdown-losange').simplyCountdown({
+			year: d.getFullYear(),
+			month: d.getMonth() + 1,
+			day: d.getDate(),
+			enableUtc: false
+		});
+		
 		$(document).ready(function () {
 			Swal.fire({
 			title: 'Buka Undangan Pernikahan',
@@ -339,22 +366,7 @@
 			})
 			
 		});
-    var d = new Date(new Date().getTime() + 70 * 120 * 180 * 400);
-
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
-
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
+   
 </script>
 
 	</body>
