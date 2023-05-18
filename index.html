@@ -331,19 +331,10 @@
 		var d = new Date(new Date().getTime() + 40 * 120 * 180 * 400);
 
 		// default example
-		simplyCountdown('.simply-countdown-one', {
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate()
-		});
+		
 
 		//jQuery example
-		$('#simply-countdown-losange').simplyCountdown({
-			year: d.getFullYear(),
-			month: d.getMonth() + 1,
-			day: d.getDate(),
-			enableUtc: false
-		});
+		
 		
 		$(document).ready(function () {
 			Swal.fire({
